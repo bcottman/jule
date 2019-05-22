@@ -1,0 +1,29 @@
+05-22 11:56 root         INFO     0.00 s, Begin to extract dataset
+05-22 11:56 root         INFO     6.35 s, Finished extracting UMist dataset
+05-22 11:56 tensorflow   WARNING  From /Users/brucecottman/anaconda3/envs/paso/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+05-22 11:56 root         INFO     6.41 s, Begin to fit neighbour graph
+05-22 11:56 root         INFO     6.52 s, Finished fitting, begin to calculate Dis
+05-22 11:56 root         INFO     6.94 s, Finished the calculation of Dis
+05-22 11:56 root         INFO     6.95 s, Nc is 192...
+05-22 11:56 root         INFO     15.19 s, AC: 0.175652, NMI: 0.750488
+05-22 11:56 tensorflow   WARNING  From /Users/brucecottman/anaconda3/envs/paso/lib/python3.7/site-packages/tensorflow/contrib/layers/python/layers/layers.py:1624: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+05-22 11:56 tensorflow   WARNING  From /Users/brucecottman/Documents/PROJECTS/jule/joint_cluster_cnn.py:486: py_func (from tensorflow.python.ops.script_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+tf.py_func is deprecated in TF V2. Instead, use
+    tf.py_function, which takes a python function which manipulates tf eager
+    tensors instead of numpy arrays. It's easy to convert a tf eager tensor to
+    an ndarray (just call tensor.numpy()) but having access to eager tensors
+    means `tf.py_function`s can use accelerators such as GPUs as well as
+    being differentiable using a gradient tape.
+    
+05-22 11:56 tensorflow   WARNING  From /Users/brucecottman/anaconda3/envs/paso/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+05-22 11:56 tensorflow   WARNING  From /Users/brucecottman/anaconda3/envs/paso/lib/python3.7/site-packages/tensorflow/python/util/tf_should_use.py:193: initialize_all_variables (from tensorflow.python.ops.variables) is deprecated and will be removed after 2017-03-02.
+Instructions for updating:
+Use `tf.global_variables_initializer` instead.
+05-22 11:56 root         INFO     15.79 s, Period: 0, epoch: 0, training...
