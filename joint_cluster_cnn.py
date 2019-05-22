@@ -157,7 +157,7 @@ class joint_cluster_cnn():
             self.Ns,  # Decay step.
             0.99995,  # Decay rate.
             staircase=False)
-
+# todo refactor into general model builder
     def model(self, x):
         # CNN
         data = tf.reshape(x, [-1, self.image_size1, self.image_size2, self.channel])
@@ -196,9 +196,9 @@ class joint_cluster_cnn():
                                 normalizer_fn=batch_norm, activation_fn=tf.nn.relu)  # 28 * 23
             net = max_pool2d(net, [2,2], [2,2], padding='SAME')  # 14 * 12
 
-        print net.get_shape()
+        print(net.get_shape())
         net = flatten(net)
-        print net.get_shape()
+        print(net.get_shape())
         net = fully_connected(net, num_outputs=160)
         net = tf.nn.l2_normalize(net, 1)
 
@@ -245,7 +245,7 @@ class joint_cluster_cnn():
         # Calculate W
         sortedDis = np.power(sortedDis, 2)
         sig2 = sortedDis.sum() / (self.Ks * self.Ns) * self.a
-        XI = np.transpose(np.tile(range(self.Ns), (self.Ks, 1)))
+        XI = np.transpose(np.tile(list(range(self.Ns)), (self.Ks, 1)))
         W = csr_matrix((np.exp(-sortedDis.flatten() * (1 / sig2)), (XI.flatten(), indexDis.flatten())),
                        shape=(self.Ns, self.Ns)).toarray()
         self.logger.info('%.2f s, Finished the calculation of W, sigma:%f', timeit.default_timer() - self.tic, np.sqrt(sig2))
