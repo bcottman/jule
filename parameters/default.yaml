@@ -1,0 +1,8 @@
+project: Common Ground Soltions/jule
+
+name: jule
+model-methods: []
+function-methods: [log,parameters,read,write,load,save]
+parameter_directory_path: '../parameters/'
+experiment_environment: 'experiment-1'
+
