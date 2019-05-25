@@ -1,0 +1,39 @@
+project: Adventi/TCA/S3
+
+# Data Source Paths
+s3_bucket_name : ''
+s3_bucket : 's3://tca-poc-test-data'
+s3_dataset_path : 'datasets'
+dataset_meta_file : 's3://tca-poc-test-data/datasets/metadata.csv'
+
+# setup for non-spark reads from s3 (used to read/write s
+non_spark_reads : False #s3fs.S3FileSystem(anon=False)
+
+non_spark_reads : False #s3fs.S3FileSystem(anon=False)
+# PackageType Queries
+daily:  'group fills by trading day for each security, account, transaction type'
+placement: 'group fills by placement time (20 minute window), same broker, same direction'
+fill_time_bin: 'group all fills falling in the same 5 minute execution bin'
+gap_2d :  'all fills occuring with no more than a 2 day gap'
+order_aam : 'by AAM order id'
+custom: 'Custom (non-standard) defined package type using the repackage() function of daily packages'
+dataset_info_set_index: 'name'
+query_columns: ['desc', 'package_type', 'start_date', 'end_date', 'snap_date', 'filter_tlids']
+#
+PYSPARK_SUBMIT_ARGS: '--packages com.amazonaws:aws-java-sdk:1.11.519,org.apache.hadoop:hadoop-aws:2.8.5 pyspark-shell'
+spark.sql.execution.arrow.enabled: True
+# hadoop
+fs.s3.impl: 'org.apache.hadoop.fs.s3a.S3AFileSystem'
+fs.s3a.impl: 'org.apache.hadoop.fs.s3a.S3AFileSystem'
+# Execution HW Environment
+cpu_n: 1
+threads_n: 1
+gpu_n: 0
+
+
+
+# Execution HW Environment
+cpu_n: 1
+threads_n: 1
+gpu_n: 0
+
